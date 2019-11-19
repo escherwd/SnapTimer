@@ -12,23 +12,23 @@ import UIKit
 	static let startAngle = 3/2 * CGFloat(M_PI)
 	static let endAngle = 7/2 * CGFloat(M_PI)
 
-	internal var mainCircleLayer: SnapTimerCircleLayer!
-	internal var centerLayer: SnapTimerCircleLayer!
-	internal var borderLayer: SnapTimerBorderLayer!
+    internal var mainCircleLayer: SnapTimerCircleLayer!
+    internal var centerLayer: SnapTimerCircleLayer!
+    internal var borderLayer: SnapTimerBorderLayer!
 
 	internal var animationsPaused = false
 
-	@IBInspectable var mainBackgroundColor: UIColor = UIColor.darkGray {
+	@IBInspectable public var mainBackgroundColor: UIColor = UIColor.darkGray {
 		didSet {
 			self.mainCircleLayer.circleColor = self.mainBackgroundColor.cgColor
 		}
 	}
-	@IBInspectable var centerBackgroundColor: UIColor = UIColor.lightGray {
+	@IBInspectable public var centerBackgroundColor: UIColor = UIColor.lightGray {
 		didSet {
 			self.centerLayer.circleColor = self.centerBackgroundColor.cgColor
 		}
 	}
-	@IBInspectable var borderBackgroundColor: UIColor = UIColor.white {
+	@IBInspectable public var borderBackgroundColor: UIColor = UIColor.white {
 		didSet {
 			self.borderLayer.circleColor = borderBackgroundColor.cgColor
 		}
@@ -97,8 +97,8 @@ import UIKit
         self.centerLayer.radius = radius/2
         self.centerLayer.frame = self.bounds
 
-        self.borderLayer.radius = radius * 0.75
-        self.borderLayer.width = radius * 0.33
+        self.borderLayer.radius = radius * 0.5
+        self.borderLayer.width = radius * 1.0
         self.borderLayer.frame = self.bounds
     }
 
